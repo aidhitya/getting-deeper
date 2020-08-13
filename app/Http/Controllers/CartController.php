@@ -11,10 +11,12 @@ class CartController extends Controller
     {
 
         //Option 1
-        $channels = Channel::all();
+        // $channels = Channel::all();
 
-        return view('shopping.cart', [
-            'channels' => $channels
-        ]);
+        // return view('shopping.cart', [
+        //     'channels' => $channels
+        // ]);
+
+        return view('shopping.cart');
     }
 }

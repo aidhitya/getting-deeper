@@ -14,10 +14,12 @@ class ChannelController extends Controller
 
         //Option 1
 
-        $channels = Channel::all();
+        // $channels = Channel::all();
 
-        return view('index', [
-            'channels' => $channels
-        ]);
+        // return view('index', [
+        //     'channels' => $channels
+        // ]);
+
+        return view('index');
     }
 }
