@@ -19,6 +19,10 @@ Route::get('/', function () {
 
 Route::get('pay', 'PayOrderController@store');
 
+Route::get('channel', 'ChannelController@index');
+
+Route::get('cart', 'CartController@index');
+
 Route::get('notif', function () {
     $user = \App\User::first();
     $mail = $user->notify(new \App\Notifications\InvoicePaid());

@@ -19,9 +19,9 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->singleton(PaymentGateway::class, function ($app) {
             if (request()->has('credit')) {
-                return new CreditPaymentGateway('currecny');
+                return new CreditPaymentGateway('currency');
             }
-            return new BankPaymentGateway('currecny');
+            return new BankPaymentGateway('currency');
         });
     }
 
