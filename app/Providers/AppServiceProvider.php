@@ -6,6 +6,7 @@ use App\Billing\PaymentGateway;
 use App\Billing\BankPaymentGateway;
 use App\Billing\CreditPaymentGateway;
 use App\Channel;
+use App\View\Composers\ChannelComposer;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -38,12 +39,15 @@ class AppServiceProvider extends ServiceProvider
         // View::share('channels', Channel::orderBy('name')->get());
 
         // Option 3
-        View::composer(['shopping.cart', 'inventory.list'], function ($view) {
-            $view->with('channels', Channel::orderBy('name')->get());
-        });
+        // View::composer(['shopping.*', 'inventory.list'], function ($view) {
+        //     $view->with('channels', Channel::orderBy('name')->get());
+        // });
 
-        view()->composer(['shopping.cart', 'inventory.list'], function ($view) {
-            $view->with('channels', Channel::orderBy('name')->get());
-        });
+        // view()->composer(['shopping.*', 'inventory.list'], function ($view) {
+        //     $view->with('channels', Channel::orderBy('name')->get());
+        // });
+
+        // Option 4
+        View::composer(['shopping.*', 'inventory.list'], ChannelComposer::class);
     }
 }
