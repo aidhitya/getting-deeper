@@ -48,6 +48,9 @@ class AppServiceProvider extends ServiceProvider
         // });
 
         // Option 4
-        View::composer(['shopping.*', 'inventory.list'], ChannelComposer::class);
+        // View::composer(['shopping.*', 'inventory.list'], ChannelComposer::class);
+
+        // Option 5
+        View::composer('partials.channels.*', ChannelComposer::class);
     }
 }

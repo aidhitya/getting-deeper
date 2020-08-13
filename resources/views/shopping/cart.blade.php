@@ -8,11 +8,7 @@
 </head>
 <body>
     <form action="#">
-        <select name="cart" id="cart">
-            @foreach ($channels as $channel)
-                <option>{{ $channel->name }}</option>
-            @endforeach
-        </select>
+       @include('partials.channels.shop')
     </form>
 </body>
 </html>

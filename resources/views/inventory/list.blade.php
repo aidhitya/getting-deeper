@@ -7,10 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <ul>
-        @foreach ($channels as $channel)
-            <li>{{ $channel->name }}</li>
-        @endforeach
-    </ul>
+    @include('partials.channels.inventory')
 </body>
 </html>
