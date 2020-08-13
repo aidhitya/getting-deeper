@@ -35,6 +35,15 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         // Option 2
-        View::share('channels', Channel::orderBy('name')->get());
+        // View::share('channels', Channel::orderBy('name')->get());
+
+        // Option 3
+        View::composer(['shopping.cart', 'inventory.list'], function ($view) {
+            $view->with('channels', Channel::orderBy('name')->get());
+        });
+
+        view()->composer(['shopping.cart', 'inventory.list'], function ($view) {
+            $view->with('channels', Channel::orderBy('name')->get());
+        });
     }
 }

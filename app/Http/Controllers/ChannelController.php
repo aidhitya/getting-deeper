@@ -20,6 +20,6 @@ class ChannelController extends Controller
         //     'channels' => $channels
         // ]);
 
-        return view('index');
+        return view('inventory.list');
     }
 }
